@@ -1,6 +1,6 @@
 #!/bin/bash
-# Sergio Cayuqueo
-# cayu@cayu.com.ar
+# Sergio Cayuqueo <cayu@cayu.com.ar>
+# http://cayu.com.ar
 
 # Script para chequear sintaxis XML de un WebService
 
