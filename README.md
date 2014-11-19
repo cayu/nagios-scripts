@@ -1,4 +1,6 @@
 nagios-scripts
 ==============
 
-Nagios scripts from http://cayu.com.ar
+Nagios scripts & plugins from http://cayu.com.ar
+
+This is a repo with my nagios scripts and confs. 
