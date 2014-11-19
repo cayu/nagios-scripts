@@ -1,8 +1,8 @@
-#!/usr/bin/php
+#!/usr/bin/php -q
 <?php
 /*
- Sergio Cayuqueo
- cayu@cayu.com.ar
+# Sergio Cayuqueo <cayu@cayu.com.ar>
+# http://cayu.com.ar
 
 Script para chequeo del Servicio de Factura Electronica de AFIP de Argentina
 
