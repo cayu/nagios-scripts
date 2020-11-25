@@ -1,8 +1,13 @@
 #!/usr/bin/python
-import errno, sys, urllib2
+import errno, sys, urllib2,ssl
 from xml.etree.ElementTree import XML
 
-response = urllib2.urlopen('https://serviciosjava.afip.gob.ar/wsmtxca/services/MTXCAService/dummy')
+ctx_no_secure = ssl.create_default_context()
+ctx_no_secure.set_ciphers('HIGH:!DH:!aNULL')
+ctx_no_secure.check_hostname = False
+ctx_no_secure.verify_mode = ssl.CERT_NONE
+
+response = urllib2.urlopen('https://serviciosjava.afip.gob.ar/wsmtxca/services/MTXCAService/dummy', context=ctx_no_secure)
 xml_afip = XML(response.read())
 
 dummy_afip = {}
