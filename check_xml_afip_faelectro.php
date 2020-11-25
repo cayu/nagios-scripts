@@ -1,11 +1,6 @@
-#!/usr/bin/php -q
+#!/usr/bin/php
 <?php
 /*
-# Sergio Cayuqueo <cayu@cayu.com.ar>
-# http://cayu.com.ar
-
-Script para chequeo del Servicio de Factura Electronica de AFIP de Argentina
-
 SimpleXMLElement Object
 (
     [appserver] => OK
@@ -13,6 +8,13 @@ SimpleXMLElement Object
     [dbserver] => OK
 )
 */
+$context = stream_context_create(array('ssl'=>array(
+    'verify_peer' => false, 
+    "verify_peer_name"=>false
+    )));
+
+libxml_set_streams_context($context);
+
 $xml_cae_dummy = simplexml_load_file('https://serviciosjava.afip.gob.ar/wsmtxca/services/MTXCAService/dummy');
 
 $appserver_status	= $xml_cae_dummy->appserver;
